@@ -1,0 +1,21 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: "0 22 * * *"  # 7am
+  workflow_dispatch:      # manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Auto Commit
+        run: |
+          echo "$(date)" >> log.txt
+          git config --global user.name "qu041"
+          git config --global user.email "aprilfoolgy.0609@gmail.com"
+          git add .
+          git commit -m "generated" || echo "nothing to commit"
+          git push
