@@ -20,5 +20,6 @@ jobs:
           git config user.name "qu041"
           git config user.email "aprilfoolgy.0609@gmail.com"
           git add -A .
-          git commit -m "generated" || echo "nothing to commit"
-          git push
+          if git commit -m "generated"; then
+            git push
+          fi
