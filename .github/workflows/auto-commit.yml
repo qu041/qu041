@@ -5,6 +5,9 @@ on:
     - cron: "0 22 * * *"  # 7am
   workflow_dispatch:      # manual
 
+  permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
