@@ -1,24 +1,24 @@
-name: Auto Commit
+name: GitHub-Profile-3D-Contrib
 
 on:
-  schedule:
-    - cron: "0 22 * * *"  # 7am
-  workflow_dispatch:      # manual
-
-  permissions:
-  contents: write
+  schedule: # 03:00 JST == 18:00 UTC
+    - cron: "0 22 * * *"  
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: generate-github-profile-3d-contrib
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Auto Commit
+      - uses: actions/checkout@v3
+      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+      - name: Commit & Push
         run: |
-          echo "$(date)" >> log.txt
-          git config --global user.name "qu041"
-          git config --global user.email "aprilfoolgy.0609@gmail.com"
-          git add .
+          git config user.name "qu041"
+          git config user.email "aprilfoolgy.0609@gmail.com"
+          git add -A .
           git commit -m "generated" || echo "nothing to commit"
           git push
