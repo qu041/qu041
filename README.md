@@ -1,4 +1,4 @@
-<h2 align="center">🐻‍❄️ Qu041 🐻‍❄️</h2>
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Alkatra&weight=500&size=45&duration=3500&pause=3&color=6994CDEE&center=true&vCenter=false&multiline=true&repeat=true&width=1000&height=100&lines=Welcome+to+qu041s+GitHub!😎)
 
 <p align="center">
   <a href="https://github.com/qu041">
